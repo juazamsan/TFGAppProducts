@@ -1,0 +1,65 @@
+<h3>Contacto</h3>
+<div class="ui-g ui-fluid" style="border: outset;">
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Nombre y apellidos" style="width: 100%;">         
+        </div>
+    </div>
+    
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><img src='/../assets/img/mailicon.png' style="width: 20px;"></span>
+            <input type="text" pInputText placeholder="Email" style="width: 100%;">   
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><img src='/../assets/img/phoneicon.jpg' style="width: 20px;"></span>
+            <input type="text" pInputText placeholder="Telefono" style="width: 100%;">   
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+           <p>Mensaje: </p> 
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <textarea [rows]="7" [cols]="10" pInputTextarea autoResize="autoResize"></textarea>  
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <button pButton type="button" style="cursor: pointer;" (click)="enviarMensaje()"><p style="font-size: initial;display: inline;">Enviar </p><i class="pi pi-check" style="font-size: 2em;"></i></button>
+    </div>
+</div>
+
+<h3>Datos destino</h3>
+<div class="ui-g ui-fluid" style="border: outset;">
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Nombre y apellidos" [(ngModel)]="nombre" style="width: 100%;" readonly>         
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Email" [(ngModel)]="email" style="width: 100%;" readonly>         
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Telefono" [(ngModel)]="telefono" style="width: 100%;" readonly>         
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Producto" [(ngModel)]="producto" style="width: 100%;" readonly>         
+        </div>
+    </div>
+
+    
+</div>
