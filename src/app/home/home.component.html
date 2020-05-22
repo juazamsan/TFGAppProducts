@@ -1,105 +1,100 @@
 
-<div class="card-container">
-<img src="../assets/img/homeImage.png" height="250px">
-</div>
 
+  <div style="text-align:center;">
+    <img src="../assets/img/homeImage.png" style="width: 100%;height: auto;">
+  </div>
+  
+  <div style="overflow:auto">
 
-<div class="card-container">
-  <p-carousel [value]="productsCar" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
-    <p-header>
-        <h3 style="padding-left: 45%;">Productos destacados</h3>
-    </p-header>
-    <ng-template let-product pTemplate="item">
-        <div class="car-details">
-            <div class="p-grid p-nogutter">
-                <div class="p-col-12">
-                    <img src="{{product.imagen}}" width="250px" height="250px" />
-                </div>
-                <div class="p-col-12 car-data">
-                    <div class="car-title">{{product.nombreProducto}}</div>
-                    <div class="car-subtitle">{{product.tipoProducto}}</div>
-                </div>
-            </div>
+    <div class="main">
+      <h2 style="text-align:center;">Productos destacados</h2>
+      <h4 style="text-align:center;"><a [routerLink]="['/listproducts']">Click aquí para ir al listado de productos</a></h4>
+      <div class="row"> 
+        <div class="column">
+          <img src="../../assets/img/Miel.jpeg" style="width:100%">
+          <img src="../../assets/img/patatas.jpg" style="width:100%">
         </div>
-    </ng-template>
-</p-carousel>
-</div>
+        <div class="column">
+          <img src="../../assets/img/pinones.jpg" style="width:100%">
+          <img src="../../assets/img/tagarninas.jpg" style="width:100%">
+        </div>  
+        <div class="column">
+          <img src="../../assets/img/otrasfrutas.jpg" style="width:100%">
+          <img src="../../assets/img/legumbres.jpg" style="width:100%">
+          <img src="../../assets/img/jaleareal.jpg" style="width:100%">
+        </div> 
+        <div class="column">
+          <img src="../../assets/img/polen.jpg" style="width:100%">
+          <img src="../../assets/img/huevos.jpg" style="width:100%">
+          <img src="../../assets/img/setassilvestres.jpg" style="width:100%">
+        </div> 
+      </div>
+    <br/>
+      <h2 style="text-align:center;">Productos por provincia</h2>
+      <agm-map 
+        [latitude]="latCenter" 
+        [longitude]="lngCenter" 
+        [zoom]="7"
+        [scrollwheel]="null">
+          
+          <agm-marker 
+            *ngFor="let m of listQuantityProductsCity; let i = index"
+            [latitude]="m.latitude"
+            [longitude]="m.longitude"
+            [label]="m.quantity">
+            
+            <agm-info-window>
+              <strong>Existen {{m.quantity}} productos disponibles en {{m.city}}</strong>
+            </agm-info-window>
+          </agm-marker>
 
-<div class="center">
-  <agm-map 
-    [latitude]="latCenter" 
-    [longitude]="lngCenter" 
-    [zoom]="7"
-    [scrollwheel]="null">
-      
-      <agm-marker 
-        *ngFor="let m of listQuantityProductsCity; let i = index"
-        [latitude]="m.latitude"
-        [longitude]="m.longitude"
-        [label]="m.quantity">
-        
-        <agm-info-window>
-          <strong>Existen {{m.quantity}} productos disponibles en {{m.city}}</strong>
-        </agm-info-window>
-      </agm-marker>
+      </agm-map>
+      <br/>
+      <h2 style="text-align:center;">Conoce los tipos de productos</h2>
+      <p-tabView id="pTabView">
+        <p-tabPanel header="Productos Ecológicos">
+          Son aquellos que desarrollan todas sus etapas de crecimiento y producción como en la naturaleza y sin intervención artificial. Es decir, para que una hortaliza sea ecológica, la semilla debe ser ecológica, la tierra y el agua descontaminada, se aprovechan las condiciones naturales para el desarrollo como el clima o el suelo, y no se usa ningún fertilizante ni pesticida químico. 
+          En el ámbito ganadero, se respeta la crianza en zona libre de contaminación, alimento ecológico, sin intervención de hormonas de crecimiento o antibióticos. 
+        </p-tabPanel>
+        <p-tabPanel header="Productos Biológicos">
+          Los productos que llevan la leyenda Bio, se destacan porque no contienen ningún componente que haya sido alterado biológicamente. Es decir, cualquier producto que no se haya realizado intervenciones de laboratorio para conseguir el resultado final, tal como puede suceder con algunas frutas o verduras para lograr mejor color, volumen o duración. 
+        </p-tabPanel>
+        <p-tabPanel header="Productos Orgánicos">
+          Especifica que no se ha realizado ninguna intervención química para lograr un desarrollo óptimo. Un alimento etiquetado como orgánico asegura que no se han usado pesticidas, fertilizantes u otras sustancias similares. 
+          No obstante, hay que aclarar que no todos los alimentos orgánicos son Bio, ya que puede ser que no contengan químicos pero que estén elaborados con productos manipulados genéticamente, como puede ser las frutas de un dulce o las uvas de un vino.       </p-tabPanel>
+      </p-tabView>
 
-  </agm-map>
-</div>
-
-<!--
-  <div class="card-container">
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-      <span><b>50%</b> ANIMAL</span>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
-      <span><b>30%</b> FORESTAL</span>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://blog.angular.io/">
-      <span><b>20%</b> AGRÍCOLA</span>
-    </a>
-
-    <article>
-      
-    </article>
-  </div>-->
-
-
-  <div class="card-container">
-    <p-tabView id="pTabView">
-      <p-tabPanel header="Productos Ecológicos">
-        Son aquellos que desarrollan todas sus etapas de crecimiento y producción como en la naturaleza y sin intervención artificial. Es decir, para que una hortaliza sea ecológica, la semilla debe ser ecológica, la tierra y el agua descontaminada, se aprovechan las condiciones naturales para el desarrollo como el clima o el suelo, y no se usa ningún fertilizante ni pesticida químico. 
-        En el ámbito ganadero, se respeta la crianza en zona libre de contaminación, alimento ecológico, sin intervención de hormonas de crecimiento o antibióticos. 
-      </p-tabPanel>
-      <p-tabPanel header="Productos Biológicos">
-        Los productos que llevan la leyenda Bio, se destacan porque no contienen ningún componente que haya sido alterado biológicamente. Es decir, cualquier producto que no se haya realizado intervenciones de laboratorio para conseguir el resultado final, tal como puede suceder con algunas frutas o verduras para lograr mejor color, volumen o duración. 
-      </p-tabPanel>
-      <p-tabPanel header="Productos Orgánicos">
-        Especifica que no se ha realizado ninguna intervención química para lograr un desarrollo óptimo. Un alimento etiquetado como orgánico asegura que no se han usado pesticidas, fertilizantes u otras sustancias similares. 
-        No obstante, hay que aclarar que no todos los alimentos orgánicos son Bio, ya que puede ser que no contengan químicos pero que estén elaborados con productos manipulados genéticamente, como puede ser las frutas de un dulce o las uvas de un vino.       </p-tabPanel>
-      <p-tabPanel header="Productos Sostenibles">
-        El término “sostenible” es más amplio y por tanto, menos restrictivo, puesto que relaciona dos factores importantes, por un lado el respeto al medio ambiente y por otro, el económico. Un producto sostenible, aunque entiende el respeto al medio ambiente, tiene como criterio principal el bienestar de las personas. 
-        La agricultura sostenible, por ejemplo, antes de llegar a alcanzar un proceso de cultivo ecológico 100% prioriza que los productores puedan sacar beneficios económicos para mejorar la economía local.
-      </p-tabPanel>
-    </p-tabView>
-  </div>
-
-  <div class="card-container">
-    <p-fieldset legend="Información de los datos obtenidos" id="pTabView">
-      Información de la venta directa de productos primarios desde las explotaciones agrarias y forestales hasta las personas consumidoras finales y establecimientos de comercio al por menor, atendiendo al Decreto 163/2016, de 18 de octubre por el que se regula dicho ejercicio.
-      <br/><br/>
-      La normativa, muy demandada por el sector, especialmente en el ámbito de la producción ecológica, permite vender productos agrarios y forestales directamente desde las explotaciones a las personas consumidoras finales, mejorando la diversificación económica de muchos pequeños agricultores/as y ganaderos/as, y ofreciendo numerosas ventajas tanto para las personas productoras como para las personas consumidoras.
-      <br/><br/>
-    En total, 22 categorías de productos agrarios y forestales sin transformar, con destino a consumo humano, hasta un límite de cantidad anual, según el producto, y que procedan de explotaciones radicadas en Andalucía.
-  </p-fieldset>
-  </div>
-
-
-  <footer >
-
-    <div class="toolbarFooter" role="banner">
-      <p class="centerText">Sitio web creado para Trabajo Fin de Grado de Ingeniería Informática en Universidad a Distancia de Madrid (UDIMA) por Juan Pablo Zambrano Sánchez</p>
     </div>
-  </footer>
+  
+    <div class="right">
+      <h3>Datos obtenidos de...</h3>
+      <p>Información de la venta directa de productos primarios desde las explotaciones agrarias y forestales hasta las personas consumidoras finales y establecimientos de comercio al por menor, atendiendo al Decreto 163/2016, de 18 de octubre por el que se regula dicho ejercicio. 
+        <br/> <br/>
+        La normativa, muy demandada por el sector, especialmente en el ámbito de la producción ecológica, permite vender productos agrarios y forestales directamente desde las explotaciones a las personas consumidoras finales, mejorando la diversificación económica de muchos pequeños agricultores/as y ganaderos/as, y ofreciendo numerosas ventajas tanto para las personas productoras como para las personas consumidoras. 
+        <br/> <br/>
+         En total, 22 categorías de productos agrarios y forestales sin transformar, con destino a consumo humano, hasta un límite de cantidad anual, según el producto, y que procedan de explotaciones radicadas en Andalucía. 
+<hr/>
+<br/>
+        <h3>Ofrecemos...</h3>
+        Este proyecto tiene como objetivo la realización de una aplicación que brinde a usuarios finales información sobre dónde poder comprar productos primarios directamente desde sus explotaciones agrarias y forestales.
+<br/><br/>
+	A partir de los datos ofrecidos por <a href="http://datos.gob.es/es/catalogo/a01002820-venta-directa-de-productos-primarios" target="_blank">datos.gob.es</a> para la reutilización de la información pública en su Catálogo de Datos de la Administración General del Estado, la aplicación facilitará la información necesaria de donde poder adquirir determinados productos a los usuarios que busquen una alternativa a los productos procesados. 
+<br/><br/>
+	La información fuente es abierta y gratuita, pero de difícil comprensión y acceso, por lo que se procesa dicha información para proporcionar al usuario un método fácil de buscar los productos que desee.
+<br/><br/>
+<h4><a [routerLink]="['/listproducts']">Acceso a listado de productos</a></h4>
+
+        <hr/>
+        <br/>
+        <h3>Enlaces de interés</h3>
+        <a href="https://www.productosecologicos.com/">www.productosecologicos.com</a>
+        <br/>
+        <a href="https://ecologicosostenible.com/">www.ecologicosostenible.com</a>
+        <br/>
+        <a href="https://realfooding.com/">www.realfooding.com</a>
+        <br/>
+        <a href="https://www.bioguia.com/alimentacion">www.bioguia.com/alimentacion</a>
+    </div>
+  </div>
+  
 

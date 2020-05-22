@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable, BehaviorSubject } from 'rxjs';
-import { ProductCar } from '../models/productCar';
 import { Client } from '../models/client';
 import {listProducts} from '../models/listProducts';
 import {listProductsImages} from '../models/listProductsImages';
@@ -246,45 +245,5 @@ getListCountProduct(){
   this.listCityQuantityProductObs.next(this.listCityQuantityProduct);
 }
 
-  
-getProductsForCar(){
-    let listProductCar: ProductCar[] = [];
-    let product1: ProductCar ={
-      nombreProducto: 'Miel',
-      tipoProducto: 'Producción Integrada',
-      imagen: '/assets/img/Miel.jpeg'
-    }
-    let product2: ProductCar ={
-      nombreProducto: 'Caracoles',
-      tipoProducto: 'Ecológico',
-      imagen: '/assets/img/caracoles.jpeg'
-    }
-
-    let product3: ProductCar ={
-      nombreProducto: 'Setas cultivadas',
-      tipoProducto: 'Producción integrada',
-      imagen: '/assets/img/setas.jpg'
-    }
-
-    let product4: ProductCar ={
-      nombreProducto: 'Patatas cultivadas',
-      tipoProducto: 'Producción integrada',
-      imagen: 'assets/img/patatas.jpg'
-    }
-
-    let product5: ProductCar ={
-      nombreProducto: 'Aceituna de Mesa',
-      tipoProducto: 'Producción integrada',
-      imagen: 'assets/img/aceitunas.jpg'
-    }
-
-
-    listProductCar.push(product1);
-    listProductCar.push(product2);
-    listProductCar.push(product3);
-    listProductCar.push(product4);
-    listProductCar.push(product5);
-    return listProductCar;
-  }
 
 }
