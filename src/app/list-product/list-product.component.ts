@@ -35,6 +35,7 @@ export class ListProductComponent implements OnInit {
     listClients: Client[]=[];
     first = 0;
     rows = 10;
+    productsCart: any[];
 
     constructor(private productService: ProductService, private dataSharedService: SharedDataService, private router: Router) { }
 
@@ -44,6 +45,9 @@ export class ListProductComponent implements OnInit {
         this.productService.listClientsObs.subscribe(data=>{
           this.listClients = data;
         })
+
+        let productsShoppingCartJSON = sessionStorage.getItem('listCart');
+        this.productsCart = JSON.parse(productsShoppingCartJSON);
 
         this.produccion=[
           {label:'Todas', value:null},
@@ -80,6 +84,20 @@ export class ListProductComponent implements OnInit {
     addCart(rowData){
       // obtener datos de rowData, y añadir a sesion
       // id, nombre, nombreProducto, cantidad(1)
+      let product={
+        id:rowData.id,
+        cliente:rowData.nombre,
+        producto:rowData.nombreProducto,
+        municipio: rowData.municipio,
+        tipoProducto: rowData.tipoProducto,
+        cantidad:1
+      };
+      if(this.productsCart==null){
+        this.productsCart=[];
+      }
+
+      this.productsCart.push(product);
+      sessionStorage.setItem('listCart', JSON.stringify(this.productsCart));
       this.router.navigate(['/shoppingcart']);
     }
 

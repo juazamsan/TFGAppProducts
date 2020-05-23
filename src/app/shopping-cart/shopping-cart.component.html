@@ -1,21 +1,27 @@
-<p>shopping-cart works!</p>
+<h4 style="text-align:center;"><a [routerLink]="['/listproducts']">Seguir comprando</a></h4>
 
 
-<!--<p-table [value]="cars">
+
+
+<p-table [value]="productsShoppingCart">
     <ng-template pTemplate="header">
         <tr>
-            <th>Vin</th>
-            <th>Year</th>
-            <th>Brand</th>
-            <th>Color</th>
+            <th>Producto</th>
+            <th>Tipo Producto</th>
+            <th>Municipio</th>
+            <th>Cliente</th>
+            <th>Cantidad</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-car>
+    <ng-template pTemplate="body" let-product>
         <tr>
-            <td>{{car.vin}}</td>
-            <td>{{car.year}}</td>
-            <td>{{car.brand}}</td>
-            <td>{{car.color}}</td>
+            <td>{{product.producto}}</td>
+            <td>{{product.tipoProducto}}</td>
+            <td>{{product.cliente}}</td>
+            <td>{{product.municipio}}</td>
+            <td>{{product.cantidad}}</td>
         </tr>
     </ng-template>
-</p-table>-->
+</p-table>
+
+<h4 style="text-align:center;"><a [routerLink]="['']">Finalizar compra</a></h4>

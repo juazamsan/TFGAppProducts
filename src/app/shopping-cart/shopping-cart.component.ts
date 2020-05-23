@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ShoppingCartComponent implements OnInit {
 
   constructor() { }
-
+  productsShoppingCart: any[];
+  
   ngOnInit(): void {
+   let productsShoppingCartJSON = sessionStorage.getItem('listCart');
+   this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
   }
   
 
