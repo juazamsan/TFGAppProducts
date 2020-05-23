@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {SharedDataService} from './service/sharedData.service';
 import { FormsModule } from '@angular/forms';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({ 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ListProductComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

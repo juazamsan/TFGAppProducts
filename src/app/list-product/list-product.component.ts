@@ -77,6 +77,12 @@ export class ListProductComponent implements OnInit {
       this.router.navigate(['/contact']);
     }
 
+    addCart(rowData){
+      // obtener datos de rowData, y añadir a sesion
+      // id, nombre, nombreProducto, cantidad(1)
+      this.router.navigate(['/shoppingcart']);
+    }
+
 
     isLastPage(): boolean {
       return this.first === (this.listClients.length - this.rows);

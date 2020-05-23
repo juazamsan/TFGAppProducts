@@ -16,9 +16,10 @@ export class AppComponent {
   ngOnInit() {
         this.items = [
                 {label: 'Home', icon: 'pi pi-fw pi-home', routerLink:'home'},
-                {label: 'Listado Productos', icon: 'pi pi-fw pi-list', routerLink:'listproducts'}
-     
+                {label: 'Listado Productos', icon: 'pi pi-fw pi-list', routerLink:'listproducts'},
+                {label: 'Carrito de compra', icon: 'pi pi-fw pi-shopping-cart', routerLink:'shoppingcart'}
         ];
+        
     }
 
 }
