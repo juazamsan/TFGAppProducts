@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IfStmt } from '@angular/compiler';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,7 +8,7 @@ import { IfStmt } from '@angular/compiler';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   productsShoppingCart: any[];
   existsProducts: boolean=false;
   
@@ -27,5 +27,16 @@ export class ShoppingCartComponent implements OnInit {
     this.productsShoppingCart.splice(index, 1);
     sessionStorage.setItem('listCart', JSON.stringify(this.productsShoppingCart));
   }
+  
+  goToPayCart(){
+    this.router.navigate(['/paycart']);
+  }
 
+  backToList(){
+    this.router.navigate(['listproducts']);
+  }
+
+  modifyQuantity(product){
+    sessionStorage.setItem('listCart', JSON.stringify(this.productsShoppingCart));
+  }
 }

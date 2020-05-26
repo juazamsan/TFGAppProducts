@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-pay-cart',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  productsShoppingCart: any[];
+
 
   ngOnInit(): void {
+    let productsShoppingCartJSON = sessionStorage.getItem('listCart');
+    this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
+  }
+
+  backToCart(){
+    this.router.navigate(['/shoppingcart']);
   }
 
 }

@@ -1,5 +1,3 @@
-<h4 style="text-align:center;"><a [routerLink]="['/listproducts']">Seguir comprando</a></h4>
-
 
 
 
@@ -23,12 +21,14 @@
             <td>{{product.municipio}}</td>
             <td>{{product.cliente}}</td>
            <!-- <td>{{product.cantidad}}</td>-->
-            <td><input id="input" type="number" width="100%" pInputText pKeyFilter="int" [(ngModel)]="product.cantidad"></td>
+            <td><input id="input" type="number" width="100%" pInputText pKeyFilter="int" [(ngModel)]="product.cantidad" (change)="modifyQuantity(product)"></td>
             <td><button pButton type="button" style="cursor: pointer;" (click)="deleteItem(product)"><i class="pi pi-trash" style="font-size: 2em;"></i></button>
             </td>
         </tr>
     </ng-template>
 </p-table>
-
-<h4 style="text-align:center;" *ngIf="existsProducts"><a [routerLink]="['']">Finalizar compra</a></h4>
+<br/>
 <h4 style="text-align:center;" *ngIf="existsProducts==false">No hay elementos en el carrito</h4>
+<button pButton type="button" style="cursor: pointer;font-size: initial;" (click)="backToList()"><i class="pi pi-arrow-left" style="font-size: 2em;"></i>Añadir productos</button>
+
+<button pButton type="button" *ngIf="existsProducts" style="cursor: pointer;font-size: initial;float:right" (click)="goToPayCart()">Finalizar compra  <i class="pi pi-arrow-right" style="font-size: 2em;"></i></button>
