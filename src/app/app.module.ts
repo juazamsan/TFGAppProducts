@@ -21,6 +21,8 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {SharedDataService} from './service/sharedData.service';
 import { FormsModule } from '@angular/forms';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import { PayCartComponent } from './pay-cart/pay-cart.component';
 
 
 @NgModule({ 
@@ -29,7 +31,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ListProductComponent,
     HomeComponent,
     ContactComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    PayCartComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     FieldsetModule,
     InputTextareaModule,
     FormsModule,
+    KeyFilterModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCCIpXI3FpIT905UdPRfqAp0-dVppujXsU'
     })

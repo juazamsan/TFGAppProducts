@@ -90,6 +90,7 @@ export class ListProductComponent implements OnInit {
         producto:rowData.nombreProducto,
         municipio: rowData.municipio,
         tipoProducto: rowData.tipoProducto,
+        imageProducto: rowData.imageProducto,
         cantidad:1
       };
       if(this.productsCart==null){
