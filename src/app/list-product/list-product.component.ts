@@ -47,7 +47,10 @@ export class ListProductComponent implements OnInit {
         })
 
         let productsShoppingCartJSON = sessionStorage.getItem('listCart');
-        this.productsCart = JSON.parse(productsShoppingCartJSON);
+        if(productsShoppingCartJSON!=''){
+          this.productsCart = JSON.parse(productsShoppingCartJSON);
+        }
+        
 
         this.produccion=[
           {label:'Todas', value:null},

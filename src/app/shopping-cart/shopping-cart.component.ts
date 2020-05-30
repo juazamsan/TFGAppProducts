@@ -14,7 +14,9 @@ export class ShoppingCartComponent implements OnInit {
   
   ngOnInit(): void {
    let productsShoppingCartJSON = sessionStorage.getItem('listCart');
-   this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
+   if(productsShoppingCartJSON!=''){
+    this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
+   }   
    if(this.productsShoppingCart!=null){
       if(this.productsShoppingCart.length>0){
         this.existsProducts=true;

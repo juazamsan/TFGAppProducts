@@ -14,11 +14,21 @@ export class PayCartComponent implements OnInit {
 
   ngOnInit(): void {
     let productsShoppingCartJSON = sessionStorage.getItem('listCart');
-    this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
+    if(productsShoppingCartJSON!=''){
+      this.productsShoppingCart = JSON.parse(productsShoppingCartJSON);
+    }
+    
   }
 
   backToCart(){
     this.router.navigate(['/shoppingcart']);
   }
+
+  confirm(){
+    alert('Reserva confirmada correctamente');
+    sessionStorage.setItem('listCart', '');
+    this.router.navigate(['/home']);
+  }
+
 
 }
