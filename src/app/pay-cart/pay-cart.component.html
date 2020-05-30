@@ -1,6 +1,42 @@
 
 <h4 style="text-align:center;">Resumen de la reserva</h4>
 
+<h5>Contacto</h5>
+
+<div class="ui-g ui-fluid" style="border: outset;">
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+            <input type="text" pInputText placeholder="Nombre y apellidos" [(ngModel)]="nombre" style="width: 100%;">         
+        </div>
+    </div>
+    
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><img src='/../assets/img/mailicon.png' style="width: 20px;"></span>
+            <input type="text" pInputText placeholder="Email" [(ngModel)]="mail" style="width: 100%;">   
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><img src='/../assets/img/phoneicon.jpg' style="width: 20px;"></span>
+            <input type="text" pInputText placeholder="Telefono"  [(ngModel)]="telefono" style="width: 100%;">   
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+           <p>Mensaje: </p> 
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-12">
+        <div class="ui-inputgroup">
+            <textarea [rows]="5" [cols]="10" pInputTextarea autoResize="autoResize"></textarea>  
+        </div>
+    </div>
+</div>
+<br/><br/>
+<hr/>
+
 <p-table [value]="productsShoppingCart">
     <ng-template pTemplate="header">
         <tr>
