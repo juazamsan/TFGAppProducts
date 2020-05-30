@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../service/productservice';
+import { ProductService } from '../service/product.service';
 import {SharedDataService} from '../service/sharedData.service';
 import { SelectItem } from '../models/SelectItem';
 import { FilterUtils } from '../utils/filterUtils';

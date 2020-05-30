@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TableModule } from 'primeng/table';
 import {SliderModule} from 'primeng/slider';
 import {DropdownModule} from 'primeng/dropdown';
-import {ProductService} from './service/productservice';
+import {ProductService} from './service/product.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CarouselModule} from 'primeng/carousel';

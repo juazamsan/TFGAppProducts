@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../service/productservice';
+import { ProductService } from '../service/product.service';
 import { CityQuantityProduct } from '../models/cityQuantityProduct';
-import {FieldsetModule} from 'primeng/fieldset';
 
 
 @Component({

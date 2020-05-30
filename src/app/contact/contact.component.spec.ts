@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import {SharedDataService} from '../service/sharedData.service';
+
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -8,7 +11,9 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
+      declarations: [ ContactComponent ],
+      imports: [RouterTestingModule],
+      providers: [SharedDataService]
     })
     .compileComponents();
   }));

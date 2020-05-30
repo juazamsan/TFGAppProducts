@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PayCartComponent } from './pay-cart.component';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('PayCartComponent', () => {
   let component: PayCartComponent;
@@ -8,7 +10,8 @@ describe('PayCartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PayCartComponent ]
+      declarations: [ PayCartComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));
