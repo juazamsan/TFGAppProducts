@@ -21,7 +21,7 @@
             <td>{{product.municipio}}</td>
             <td>{{product.cliente}}</td>
            <!-- <td>{{product.cantidad}}</td>-->
-            <td><input id="input" type="number" width="100%" pInputText pKeyFilter="int" [(ngModel)]="product.cantidad" (change)="modifyQuantity(product)"></td>
+            <td><input id="input" type="number" style="width: 100%;" pInputText pKeyFilter="int" [(ngModel)]="product.cantidad" (change)="modifyQuantity(product)"></td>
             <td><button pButton type="button" style="cursor: pointer;" (click)="deleteItem(product)"><i class="pi pi-trash" style="font-size: 2em;"></i></button>
             </td>
         </tr>
@@ -31,4 +31,4 @@
 <h4 style="text-align:center;" *ngIf="existsProducts==false">No hay elementos en el carrito</h4>
 <button pButton type="button" style="cursor: pointer;font-size: initial;" (click)="backToList()"><i class="pi pi-arrow-left" style="font-size: 2em;"></i>Añadir productos</button>
 
-<button pButton type="button" *ngIf="existsProducts" style="cursor: pointer;font-size: initial;float:right" (click)="goToPayCart()">Finalizar compra  <i class="pi pi-arrow-right" style="font-size: 2em;"></i></button>
+<button pButton type="button" *ngIf="existsProducts" style="cursor: pointer;font-size: initial;float:right" (click)="goToPayCart()">Finalizar reserva  <i class="pi pi-arrow-right" style="font-size: 2em;"></i></button>

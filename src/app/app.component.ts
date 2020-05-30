@@ -17,7 +17,7 @@ export class AppComponent {
         this.items = [
                 {label: 'Home', icon: 'pi pi-fw pi-home', routerLink:'home'},
                 {label: 'Listado Productos', icon: 'pi pi-fw pi-list', routerLink:'listproducts'},
-                {label: 'Carrito de compra', icon: 'pi pi-fw pi-shopping-cart', routerLink:'shoppingcart'}
+                {label: 'Carrito de reserva', icon: 'pi pi-fw pi-shopping-cart', routerLink:'shoppingcart'}
         ];
         
     }
